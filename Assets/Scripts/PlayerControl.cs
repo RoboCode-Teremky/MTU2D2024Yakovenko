@@ -52,4 +52,18 @@ public class PlayerControl : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * 1.5f);
     }
+
+    private void OnTriggerStay2D (Collider2D other) {
+        if (other.tag == "Ladder"){
+            animator.SetBool ("Climb", true);
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.AddForce(transform.up * jumpForce * 2.5f, ForceMode2D.Impulse);
+        }
+
+    }
+    private void OnTriggerExit2D (Collider2D other){
+        if(other.tag == "Ladder"){
+            animator.SetBool("Climb", false);
+        }
+    }
 }
