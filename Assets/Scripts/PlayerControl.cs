@@ -38,11 +38,11 @@ public class PlayerControl : MonoBehaviour
     void Flip (){
         if (Input.GetAxis("Horizontal")<0){
             //transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
         if (Input.GetAxis("Horizontal")>0){
             //transform.localRotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
 
 
